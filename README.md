@@ -1,4 +1,4 @@
-# Sliders-Hawaii
+# Slider-Hawaii
 1. By clicking on the buttons prev and next, change the number in sequential order.
 
 2. Changing the number should be from 0-3 in a circle.
