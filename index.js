@@ -21,7 +21,7 @@ miniatures.children[num].classList.add('border')
 miniatures.onclick=(event)=>{
      miniatures.children[num].classList.remove('border')
      pictures.children[num].style.display = 'none'
-     num = event.target.dataset.index
+     num = +event.target.dataset.index
      pictures.children[num].style.display = 'block'
     miniatures.children[num].classList.add('border')
 }
