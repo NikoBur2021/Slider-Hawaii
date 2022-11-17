@@ -34,22 +34,26 @@ number.innerHTML = num
 
 prev.onclick=()=>{
     pictures.children[num].style.display = 'none'
+    miniatures.children[num].classList.remove('border')
     if(num === 0){
         num = quant
     }else{
         num--
     }
     pictures.children[num].style.display = 'block'
+    miniatures.children[num].classList.add('border')
     number.innerHTML = num
 }
 
 next.onclick=()=>{
     pictures.children[num].style.display = 'none'
+    miniatures.children[num].classList.remove('border')
     if(num === quant){
         num = 0
     }else{
         num++
     }
     pictures.children[num].style.display = 'block'
+    miniatures.children[num].classList.add('border')
     number.innerHTML = num
 }
