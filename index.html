@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .pictures{
-            padding: 5rem 5rem 0rem 5rem;
+        .wrap{
+            padding: 10%;
         }
-        .pictures img{
-            width: 100%;
-            display: none;
-        }
-        .miniatures{
-            padding: .1rem 5rem 0rem 5rem;
-        }
-        .miniatures img{
-            width: 25%;
-            padding: 0rem .1rem 0rem 0rem;
-            box-sizing: border-box;
-        }
-        .border{
-            outline: 2px solid black;
-        }
-        .buttons{
-            display: flex;
-            justify-content: center;
-        }
+       .pictures img{
+           width: 100%;
+           display: none;
+       }
+       .miniatures img{
+           width: 100%;
+       }
+       .miniatures{
+           display: flex;
+           justify-content: space-between;
+           gap: .1rem;
+           margin-top: .1rem;
+           width: calc(25% - .1rem);
+       }
+       .current{
+           outline: 2px solid black;
+       }
     </style>
 </head>
 <body>
+<div class="wrap">
+    <div class="container">
 <div class="pictures">
-    <img src="20211004_130529.jpg">
     <img src="20211005_071319.jpg">
-    <img src="20211004_160244.jpg">
+    <img src="20211004_130529.jpg">
     <img src="20211008_115019.jpg">
+    <img src="20211004_160244.jpg">
 </div>
-<div class="miniatures"></div>
-<div class="buttons">
+        <div class="miniatures"></div>
+    </div>
 <div class="number"></div>
 <button class="prev">Prev</button>
 <button class="next">Next</button>
