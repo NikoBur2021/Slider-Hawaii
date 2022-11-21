@@ -4,56 +4,49 @@ const next = document.querySelector('.next')
 const pictures = document.querySelector('.pictures')
 const miniatures = document.querySelector('.miniatures')
 
-pictures.children[0].style.display = 'block'
 
+for(let i =0; i< pictures.children.length; i++){
+    let url = pictures.children[i].src
+    miniatures.innerHTML += `<img data-index="${i}" src="${url}">`
+}
+pictures.children[0].style.display  = 'block'
+miniatures.children[0].classList.add('current')
 
 let num = 0
-let quant = pictures.children.length-1
+let quantity = pictures.children.length-1
 
-
-for(let i=0; i<pictures.children.length; i++){
-    let mini = pictures.children[i].src
-    miniatures.innerHTML += `<img data-index="${i}" src="${mini}">`
-}
-miniatures.children[num].classList.add('border')
-
+number.textContent = num
 
 miniatures.onclick=(event)=>{
-     miniatures.children[num].classList.remove('border')
-     pictures.children[num].style.display = 'none'
-     num = +event.target.dataset.index
-     pictures.children[num].style.display = 'block'
-    miniatures.children[num].classList.add('border')
+    miniatures.children[num].classList.remove('current')
+    pictures.children[num].style.display  = 'none'
+    num = event.target.dataset.index
+    pictures.children[num].style.display  = 'block'
+    miniatures.children[num].classList.add('current')
 }
 
-number.innerHTML = num
-
-
-
-
-
 prev.onclick=()=>{
-    pictures.children[num].style.display = 'none'
-    miniatures.children[num].classList.remove('border')
+    miniatures.children[num].classList.remove('current')
+    pictures.children[num].style.display  = 'none'
     if(num === 0){
-        num = quant
+        num = quantity
     }else{
         num--
     }
-    pictures.children[num].style.display = 'block'
-    miniatures.children[num].classList.add('border')
-    number.innerHTML = num
+    pictures.children[num].style.display  = 'block'
+    number.textContent = num
+    miniatures.children[num].classList.add('current')
 }
 
 next.onclick=()=>{
-    pictures.children[num].style.display = 'none'
-    miniatures.children[num].classList.remove('border')
-    if(num === quant){
+    miniatures.children[num].classList.remove('current')
+    pictures.children[num].style.display  = 'none'
+    if(num === quantity){
         num = 0
     }else{
         num++
     }
-    pictures.children[num].style.display = 'block'
-    miniatures.children[num].classList.add('border')
-    number.innerHTML = num
+    pictures.children[num].style.display  = 'block'
+    miniatures.children[num].classList.add('current')
+    number.textContent = num
 }
